@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<style>
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<div class="jumbotron">
+  <h3>Here is a list of all registered employees.</h3><br>
+    <table>
+      <tr>
+        <th>EmployeeId</th>
+        <th>Name</th>
+        <th>EmailId</th>
+      </tr>
+
+
+      {% for emp in employees  %}
+      <tr>
+        <td>{{emp['empId']}}</td>
+        <td>{{emp['name']}}</td>
+        <td>{{emp['email']}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+</div>
+{% endblock %}

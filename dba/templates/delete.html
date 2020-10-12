@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Delete an Employee?</h1>
+  <p>Fill out the form to remove remove the employee data from database.</p>
+  <form method="POST">
+      {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+      {{ form.id.label }} {{ form.id() }} &nbsp &nbsp &nbsp
+      {{ form.deleteOne() }}
+      <br><br>Delete All Employee Record ?&nbsp &nbsp &nbsp {{ form.deleteAll() }}
+
+  </form>
+
+</div>
+{{message}}
+{% endblock %}
