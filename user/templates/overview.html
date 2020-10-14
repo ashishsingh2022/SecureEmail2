@@ -5,12 +5,11 @@
   <h3>Overview</h3><br>
 
   <h5>This Email Will Be Sent To..</h5>
-    {% if files==[] %}
+    {% if emails=="" %}
             You have not selected receiver yet !!!....
     {% endif %}
-    {% for email in emails %}
-    {{email}}
-    {% endfor %}
+    {{emails}}
+
   <br><br>
 
   <h5>Subject:-</h5>{{subject}}
@@ -31,8 +30,10 @@
           {% endfor %}
   {% endif %}
 </div >
-<div style="text-align:center;">
-{{ form.send(class="btn btn-outline-info") }}
-{{ form.cancel(class="btn btn-outline-info") }}
+<form class="form-group" method="POST">
+  <div style="text-align:center;">
+    {{ form.send(class="btn btn-outline-info") }}
+    {{ form.cancel(class="btn btn-outline-info") }}
+  </div>
+</form>
 {% endblock %}
-</div>

@@ -6,6 +6,9 @@ from flask import Flask, render_template, url_for, redirect,flash
 import requests
 import json
 from werkzeug.utils import secure_filename
+from packages.huffman import *
+from package.encryption import *
+from package.decryption import *
 
 
 app = Flask(__name__)
@@ -78,14 +81,47 @@ def add_attachments():
 
 
 
-@app.route('/overview')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/overview',methods=['POST','GET'])
 def overview():
     global emails,subject,body,files
     print(emails)
     form=sendingForm()
-    if form.validate_on_submit():
-        return render_template("sent.html")
-    return render_template('overview.html',emails=emails,subject=subject,body=body,files=files,form=form)
+    if form.send.data:
+        #Compress
+        body=compress_text(file_name="",string=body)
+        
+        #body=encrypt()
+        for file in files:
+            compress_text(file_name=file,string="")
+            #encrypt()
+        #encrypt
+        return(body)
+    else:
+        pass
+    return render_template('overview.html',emails=", ".join(emails),subject=subject,body=body,files=files,form=form)
 
 
 
