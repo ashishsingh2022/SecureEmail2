@@ -3,8 +3,10 @@ import os
 from flask import Flask
 from forms import  AddForm , DelForm
 from flask import Flask, render_template, url_for, redirect,flash
+from packages.cryptolib import GenerateKeys
 import requests
 import json
+import getmac
 
 
 
@@ -14,6 +16,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 
 domain_name= "http://127.0.0.1:8001"
+private_key_address="C:/Users/AshishPC/Desktop/private/"
 
 def post_request(link):
     r = requests.post(url =link)
@@ -42,13 +45,14 @@ def add_Employee():
     if form.validate_on_submit():
         name = form.name.data
         email=form.email.data
-        pubKey="apple"
+        pubKey= GenerateKeys(getmac.get_mac_address(),private_key_address,name).decode()
         dbPass=form.dbPass.data
-        address= "/insert/"+name+"/"+email+"/"+pubKey+"/"+dbPass
+        address= "/insert/"+name+"/"+email+"/"+dbPass
         link=domain_name+address
-        code,data=post_request(link)
-        # Add an alert here flash( data['reply'])
-        print(data)
+        key={"Key":pubKey}
+        res=requests.post(link, json=key)
+        if res.ok:
+            data=res.json()
         message=data['reply']
         #form.name.data=""
         #form.email.data=""

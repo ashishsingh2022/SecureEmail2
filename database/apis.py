@@ -1,12 +1,12 @@
-from flask import Flask, request
+from flask import Flask, request,jsonify
 from flask_restful import Resource, Api
 from database import *
-
+import requests
 api = Api(app)
 
 # Operations On Employee
 def insert_employee(name,email,pubKey):
-    person = Employee.query.filter_by(name=name).filter_by(emailId=email).filter_by(publicKey=pubKey).first()
+    person = Employee.query.filter_by(name=name).filter_by(emailId=email).first()
     if person!=None:
         return False," The Employee Is Already Registered ."
     new_emp=Employee(name,email,pubKey)
@@ -109,10 +109,11 @@ def returnAll():
 
 
 class Insert(Resource):
-    def post(self,name,email,pubKey,dbaPass):
+    def post(self,name,email,dbaPass):
+        pubKey=request.get_json()['Key'].encode()
         response=insert_employee(name,email,pubKey)
         message={'status':response[0],'reply':response[1]}
-        return message
+        return message, 200
 
 class Query(Resource):
     def get(self,empId):
@@ -194,7 +195,7 @@ class View(Resource):
             message['members_ids']=members
         return message
 
-api.add_resource(Insert, '/insert/<string:name>/<string:email>/<string:pubKey>/<string:dbaPass>')
+api.add_resource(Insert, '/insert/<string:name>/<string:email>/<string:dbaPass>')
 api.add_resource(Query, '/email_and_key/<int:empId>')
 api.add_resource(CreateGroup, '/CreateGroup/<string:name>/<int:admin>')
 api.add_resource(AddMembers, '/AddMembers/<int:empId>')
