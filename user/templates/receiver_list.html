@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+</style>
+
+<div class="jumbotron">
+
+  <h3>Send an Email ?</h3>
+  <form class="form-group" method="POST">
+      <div class="form-group">
+        <table>
+          <tr>
+            <th>EmployeeId</th>
+            <th>Name</th>
+              <th>Select Status</th>
+          </tr>
+
+          {% for emp in employees  %}
+          <tr>
+            <td>{{emp['empId']}}</td>
+            <td>{{emp['name']}}</td>
+            <td><input type="checkbox" name="say_hello" value={{emp['email']}}> Tick here to Select</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <input type="submit">
+        </div>
+  </form>
+</div>
+
+
+
+{% for file in files  %}
+<ul>
+  <li>{{file}}</li>
+</ul>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+
+  <h3>Select Files To Send ?</h3>
+  <form class="form-group" method="POST" enctype="multipart/form-data">
+      {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+      {{ form.file.label() }} &nbsp &nbsp {{ form.file(class="btn btn-outline-info") }}
+      </div>
+
+      <div class="form-group">
+          Remove All Selected Files ?  &nbsp &nbsp &nbsp &nbsp &nbsp{{ form.deleteAll(class="btn btn-outline-info") }}
+      </div>
+      <br>
+      <div class="form-group">
+          {{ form.next(class="btn btn-outline-info") }}
+      </div>
+
+  </form>
+</div>
+
+{% if files==[] %}
+        You have not selected any file yet !!!.
+    {% else %}
+        You have selectd the following files to be sent !!!....
+{% endif %}
+
+
+{% for file in files  %}
+<ul>
+  <li>{{file}}</li>
+</ul>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+  <h1>Overview</h1><br>
+  <h3>This Email Will Be Sent To..<h3><br>
+
+    {% if files==[] %}
+            You have not selected receiver yet !!!.
+        {% else %}
+            {% for email in receivers  %}{{email}}{% endfor %}
+    {% endif %}
+  <h3>Subject:-</h3>{{subject}}
+  <h3>Body</h3><br>{{body}}
+  <h3>Attachments</h3><br>
+  {% if files==[] %}
+          You have not selected any file yet !!!.
+      {% else %}
+          You have selectd the following files to be sent !!!....
+  {% endif %}
+</div>
+{% endblock %}

@@ -13,7 +13,7 @@ import json
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 
-domain_name= "http://127.0.0.1:5000"
+domain_name= "http://127.0.0.1:8001"
 
 def post_request(link):
     r = requests.post(url =link)
@@ -92,4 +92,4 @@ def del_employee():
 
 
 if __name__ == '__main__':
-    app.run(host="localhost", port=8001, debug=True)
+    app.run(host="localhost", port=8002, debug=True)
