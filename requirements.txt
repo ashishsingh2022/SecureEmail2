@@ -1,21 +1,21 @@
 alabaster==0.7.12
-alembic @ file:///home/conda/feedstock_root/build_artifacts/alembic_1599849174714/work
+alembic 
 aniso8601==8.0.0
-astroid @ file:///C:/ci/astroid_1592487315634/work
-attrs @ file:///tmp/build/80754af9/attrs_1600298409949/work
+astroid 
+attrs
 Babel==2.8.0
 backcall==0.2.0
 beautifulsoup4==4.9.3
-bleach @ file:///tmp/build/80754af9/bleach_1600439572647/work
+bleach
 blinker==1.4
 brotlipy==0.7.0
 certifi==2020.6.20
-cffi @ file:///C:/ci/cffi_1598352710791/work
+cffi
 chardet==3.0.4
 click==7.1.2
-cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1598884132938/work
+cloudpickle
 colorama==0.4.3
-cryptography @ file:///C:/ci/cryptography_1598892079907/work
+cryptography
 decorator==4.4.2
 defusedxml==0.6.0
 docopt==0.6.2
@@ -30,53 +30,53 @@ Flask-Migrate==2.4.0
 Flask-OAuth==0.12
 Flask-OAuthlib==0.9.4
 Flask-RESTful==0.3.8
-Flask-SQLAlchemy @ file:///home/conda/feedstock_root/build_artifacts/flask-sqlalchemy_1594747318500/work
+Flask-SQLAlchemy 
 Flask-WTF==0.14.2
 gunicorn==20.0.4
 httplib2==0.11.3
-idna @ file:///tmp/build/80754af9/idna_1593446292537/work
+idna 
 imagesize==1.2.0
-importlib-metadata @ file:///C:/ci/importlib-metadata_1593446511143/work
-ipykernel @ file:///C:/ci/ipykernel_1596190155316/work/dist/ipykernel-5.3.4-py3-none-any.whl
-ipython @ file:///C:/ci/ipython_1598865816163/work
+importlib-metadata
+ipykernel
+ipython
 ipython-genutils==0.2.0
-isort @ file:///C:/ci/isort_1600482937895/work
+isort
 itsdangerous==1.1.0
 jedi==0.14.1
 Jinja2==2.11.2
 Js2Py==0.70
 jsonschema==3.2.0
-jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1594826976318/work
+jupyter-client
 jupyter-core==4.6.3
-keyring @ file:///C:/ci/keyring_1598884979533/work
+keyring
 lazy==1.3
 lazy-object-proxy==1.4.3
-Mako @ file:///home/conda/feedstock_root/build_artifacts/mako_1595925083607/work
+Mako 
 MarkupSafe==1.1.1
 mccabe==0.6.1
 mistune==0.8.4
 nbconvert==5.6.1
 nbformat==5.0.7
-numpydoc @ file:///tmp/build/80754af9/numpydoc_1594166760263/work
+numpydoc
 oauth2==1.9.0.post1
 oauthlib==2.0.7
 packaging==20.4
 pandocfilters==1.4.2
-parso @ file:///tmp/build/80754af9/parso_1596826841367/work
+parso
 pickleshare==0.7.5
-prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1598885458782/work
-psutil @ file:///C:/ci/psutil_1598370330503/work
+prompt-toolkit 
+psutil
 pycodestyle==2.6.0
-pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+pycparser
 pyflakes==2.2.0
-Pygments @ file:///tmp/build/80754af9/pygments_1600458456400/work
+Pygments 
 pyjsparser==2.7.1
 PyJWT==1.4.2
-pylint @ file:///C:/ci/pylint_1598617153160/work
-pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1594392929924/work
+pylint
+pyOpenSSL 
 pyparsing==2.4.7
 PyPrind==2.11.2
-pyrsistent @ file:///C:/ci/pyrsistent_1600141795814/work
+pyrsistent
 pySmartDL==1.3.4
 PySocks==1.7.1
 python-dateutil==2.8.1
@@ -86,16 +86,16 @@ pywin32==227
 pywin32-ctypes==0.2.0
 pyzmq==19.0.2
 QtAwesome==0.7.2
-qtconsole @ file:///tmp/build/80754af9/qtconsole_1598374667791/work
+qtconsole
 QtPy==1.9.0
-requests @ file:///tmp/build/80754af9/requests_1592841827918/work
+requests 
 requests-oauthlib==0.8.0
 rope==0.17.0
 sip==4.19.13
 six==1.15.0
 snowballstemmer==2.0.0
 soupsieve==2.0.1
-Sphinx @ file:///tmp/build/80754af9/sphinx_1597428793432/work
+Sphinx 
 sphinxcontrib-applehelp==1.0.2
 sphinxcontrib-devhelp==1.0.2
 sphinxcontrib-htmlhelp==1.0.3
@@ -104,16 +104,16 @@ sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
 spyder==3.3.6
 spyder-kernels==0.5.2
-SQLAlchemy @ file:///D:/bld/sqlalchemy_1597702122451/work
+SQLAlchemy 
 SQLAlchemy-Utils==0.33.2
 testpath==0.4.4
-toml @ file:///tmp/build/80754af9/toml_1592853716807/work
+toml 
 tornado==6.0.4
 traitlets==4.3.3
 tzlocal==2.1
-urllib3 @ file:///tmp/build/80754af9/urllib3_1597086586889/work
+urllib3 
 URLObject==2.4.3
-wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
+wcwidth 
 webencodings==0.5.1
 Werkzeug==0.16.0
 win-inet-pton==1.1.0

@@ -110,7 +110,7 @@ def returnAll():
 
 class Insert(Resource):
     def post(self,name,email,dbaPass):
-        pubKey=request.get_json()['Key'].encode()
+        pubKey=request.get_json()['Key']
         response=insert_employee(name,email,pubKey)
         message={'status':response[0],'reply':response[1]}
         return message, 200
